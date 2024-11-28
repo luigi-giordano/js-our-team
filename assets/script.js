@@ -37,34 +37,34 @@ const teamMembers = [
   }
 ];
 
-//definisco il contenitore
-const teamContainer = document.querySelector('.container-team');
+// Definisco il contenitore
+const rowCol = document.querySelector('#row-col');
 
-//faccio due funzioni, la prima con dentro la card e le proprietà relative,
+// Funzione per creare una card con le proprietà relative
 const memberCard = (member) => {
   const {name, role, email, img} = member;
-  return `<div class="row">
-        <div class="col-md-4">
+  return `
+        <div class="col-md-4 mb-4">
           <div class="card" style="width: 18rem;">
             <img src="./${img}" class="card-img-top" alt="">
             <div class="card-body">
               <h5 class="card-title">${name}</h5>
               <p class="card-text">${role}</p>
-              <a href="mailto:tuoindirizzo@email.com">${email}</a>
+              <a href="mailto:${email}">${email}</a>
             </div>
           </div>
-        </div>
-        </div>
-      </div>`
+        </div>`;
 }
-//la seconda con gli oggetti(membri del team) e ad ogni ciclo devo richiamare la funzione che creo dalla card
+
+// Funzione per generare le card del team
 const memberTeam = (team) => {
   let cards = '';
-  for(let member of teamMembers){
-    //infine concateno la card a una variabile
+  for (let member of team) {
+    // Concateno la card alla variabile
     cards += memberCard(member);
   }
-  teamContainer.innerHTML = cards;
+  rowCol.innerHTML = cards;
 }
-//stampo le card
+
+// Stampo le card
 memberTeam(teamMembers);
