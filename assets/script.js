@@ -36,3 +36,8 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+//definisco il contenitore
+//faccio due funzioni, la prima con dentro la card e le proprietà relative,
+//la seconda con gli oggetti(membri del team) e ad ogni ciclo devo richiamare la funzione che creo dalla card
+//successivamente concateno la card a una variabile
