@@ -38,13 +38,9 @@ const teamMembers = [
 ];
 
 //definisco il contenitore
-//faccio due funzioni, la prima con dentro la card e le proprietà relative,
-//la seconda con gli oggetti(membri del team) e ad ogni ciclo devo richiamare la funzione che creo dalla card
-//successivamente concateno la card a una variabile
-
 const teamContainer = document.querySelector('.container-team');
 
-
+//faccio due funzioni, la prima con dentro la card e le proprietà relative,
 const memberCard = (member) => {
   const {name, role, email, img} = member;
   return `<div class="row">
@@ -60,17 +56,15 @@ const memberCard = (member) => {
         </div>
         </div>
       </div>`
-
 }
-
+//la seconda con gli oggetti(membri del team) e ad ogni ciclo devo richiamare la funzione che creo dalla card
 const memberTeam = (team) => {
   let cards = '';
-
   for(let member of teamMembers){
+    //infine concateno la card a una variabile
     cards += memberCard(member);
-
   }
   teamContainer.innerHTML = cards;
 }
-
+//stampo le card
 memberTeam(teamMembers);
