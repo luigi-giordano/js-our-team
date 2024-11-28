@@ -47,15 +47,19 @@ const teamContainer = document.querySelector('.container-team');
 
 const memberCard = (member) => {
   const {name, role, email, img} = member;
-  return `<div class="card" style="width: 18rem;">
-        <img src="./${img}" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">${name}</h5>
-          <p class="card-text">${role}</p>
-          <a href="mailto:tuoindirizzo@email.com">${email}</a>
+  return `<div class="row">
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img src="./${img}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">${name}</h5>
+              <p class="card-text">${role}</p>
+              <a href="mailto:tuoindirizzo@email.com">${email}</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>`
+        </div>
+      </div>`
 
 }
 
