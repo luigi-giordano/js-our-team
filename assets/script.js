@@ -41,3 +41,32 @@ const teamMembers = [
 //faccio due funzioni, la prima con dentro la card e le proprietà relative,
 //la seconda con gli oggetti(membri del team) e ad ogni ciclo devo richiamare la funzione che creo dalla card
 //successivamente concateno la card a una variabile
+
+const teamContainer = document.querySelector('.container-team');
+
+
+const memberCard = (member) => {
+  const {name, role, email, img} = member;
+  return `<div class="card" style="width: 18rem;">
+        <img src="./${img}" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title">${name}</h5>
+          <p class="card-text">${role}</p>
+          <a href="mailto:tuoindirizzo@email.com">${email}</a>
+        </div>
+      </div>
+    </div>`
+
+}
+
+const memberTeam = (team) => {
+  let cards = '';
+
+  for(let member of teamMembers){
+    cards += memberCard(member);
+
+  }
+  teamContainer.innerHTML = cards;
+}
+
+memberTeam(teamMembers);
